@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">URL</h6>
+            </div>
+            <div class="form-group">
+                <label>Vous pouvez changer l'Url </label>
+                <input [(ngModel)]="url.url" type="text" class="form-control" />
+                <div class="invalid-feedback">
+                    
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-primary" (click)="update()">Modifier</button>
+            </div>
+        </div>
+        <ngx-qrcode
+  class="d-flex align-items-center justify-content-center"
+  [elementType]="elementType"
+  [errorCorrectionLevel]="correctionLevel"
+  [value]="value"
+  cssClass="bshadow"
+></ngx-qrcode>
+
+
+
+      

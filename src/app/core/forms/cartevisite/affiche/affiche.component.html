@@ -1,0 +1,52 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<body>
+  <div>
+<h2 style="text-align:center">User Profile Card</h2>
+
+<div class="card">
+  <div *ngFor="let el of qrcode.nom ">
+  <h2>{{el.value}}</h2>
+</div>
+  <div *ngFor="let el of qrcode.prenom ">
+  <h2>{{el.value}}</h2>
+</div>
+  <div *ngFor="let el of qrcode.ville ">
+    <p class="title">{{el.value}}</p>
+</div>
+  <div *ngFor="let el of qrcode.phone ">
+    <p class="title">{{el.value}}</p>
+</div>
+  <div *ngFor="let el of qrcode.email ">
+    <p class="title">{{el.value}}</p>
+</div>
+  <div *ngFor="let el of qrcode.adresse ">
+    <p class="title">{{el.value}}</p>
+</div>
+
+  
+
+  <p> 
+    <!-- <img src="http://www.jaimelesstartups.fr/wp-content/uploads/2013/06/LOGO_SIMPLONCO_RECT_COUL_BLANC400PX.png" alt="" style="width:50%"> -->
+     </p>
+  <div style="margin: 24px 0;">
+    <a href="#"><i class="fa fa-dribbble"></i></a> 
+    <a href="#"><i class="fa fa-twitter"></i></a>  
+    <a href="#"><i class="fa fa-linkedin"></i></a>  
+    <a href="#"><i class="fa fa-facebook"></i></a> 
+ </div>
+ <p><button>Contact</button></p>
+
+
+ <ngx-qrcode
+ [elementType]="elementType"
+ [errorCorrectionLevel]="correctionLevel"
+ [value]="value"
+ cssClass="bshadow"></ngx-qrcode>
+
+</div>
+
+
+
+

@@ -1,0 +1,27 @@
+<div class="form">
+  <ul class="tab-group">
+    <h1 style="font-weight: 800">____ Menu ____</h1>
+  </ul>
+
+  <div class="tab-content">
+    <h1>{{ qrcode.name }}</h1>
+
+    <!-- <form action="/" method="post"> -->
+
+    
+     
+      <h1 *ngFor="let el of qrcode.plat">
+          <li>{{ el.nomPlat }} &nbsp; {{ el.prixPlat }} &nbsp;</li>
+      </h1>
+   
+    
+  </div>
+</div>
+
+<ngx-qrcode
+  class="d-flex align-items-center justify-content-center"
+  [elementType]="elementType"
+  [errorCorrectionLevel]="correctionLevel"
+  [value]="value"
+  cssClass="bshadow"
+></ngx-qrcode>

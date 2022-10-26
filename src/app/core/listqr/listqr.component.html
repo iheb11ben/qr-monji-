@@ -1,0 +1,249 @@
+<div class="container">
+
+    <!-- Page Heading -->
+
+    <div class="row">
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Liste Qr-Codes de l'Url</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <table class="table table-bordered dataTable" id="dataTable" width="100%"
+                                    cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+                                    <thead>
+                                        <tr role="row">
+                                            <th class="sorting sorting_asc" tabindex="0" aria-controls="dataTable"
+                                                rowspan="1" colspan="1" aria-sort="ascending"
+                                                aria-label="Name: activate to sort column descending"
+                                                style="width: 57px;">
+                                                Url</th>
+
+                                         
+                                                <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
+                                                colspan="1" aria-label="Position: activate to sort column ascending"
+                                                style="width: 61px;">Paramètres</th>
+
+
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+
+                                    </tfoot>
+                                    <tbody>
+                                        <!--  *ngFor ="let p of listparent ;let index=index" -->
+                                        <tr *ngFor="let u of  urlQr;let index=index ">
+
+                                            <td>{{u.url}}</td>
+                                            <td>
+                                                <button type="button" class="btn btn-primary mr-1" (click)="afficheUrl(u._id)"> <i class="fa fa-link fa-1x text-gray-300  "></i>&nbsp;Consulter et Modifier</button>  <button type="button" class="btn btn-danger mr-1" (click)="deleteUrl(u._id)"> Supprimer</button>
+                                            </td>
+                  
+
+                                            <!-- <td><button type="button" class="btn btn-danger">Supprimer</button> -->
+
+
+
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-5">
+                                <div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite"></div>
+                            </div>
+                            <div class="col-sm-12 col-md-7">
+                                <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+<!-- iheb -->
+
+<div class="row">
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Liste Qr-Codes de la Carte</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <table class="table table-bordered dataTable" id="dataTable" width="100%"
+                                cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+                                <thead>
+                                    <tr role="row">
+                                        <th class="sorting sorting_asc" tabindex="0" aria-controls="dataTable"
+                                            rowspan="1" colspan="1" aria-sort="ascending"
+                                            aria-label="Name: activate to sort column descending"
+                                            style="width: 57px;">
+                                            Nom Qr</th>
+
+                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
+                                            colspan="1" aria-label="Position: activate to sort column ascending"
+                                            style="width: 61px;">Accéder au lien</th>
+                                            <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
+                                            colspan="1" aria-label="Position: activate to sort column ascending"
+                                            style="width: 61px;">Paramètres</th>
+
+
+                                    </tr>
+                                </thead>
+                                <tfoot>
+
+                                </tfoot>
+                                <tbody>
+                                    <!--  *ngFor ="let p of listparent ;let index=index" -->
+                                    <tr *ngFor="let p of  myVisite;let index=index ">
+
+                                        <td>{{p.nomQr}}</td>
+                                        <td>
+                                            <!-- <input [(ngModel)]="p._id" let i="p._id"> -->
+
+                                            <button type="button" class="btn btn-primary" (click)="affiche(p._id)">
+                                                <i class="fa fa-link fa-1x text-gray-300  "></i>&nbsp;Lien</button>
+                                        </td>
+                                        <td>
+
+                                            <button type="button" class="btn btn-warning mr-1"
+                                                [routerLink]="'../update/'+p._id"> <i
+                                                    class="fa fa-link fa-1x text-gray-300  "></i>&nbsp;
+                                                Modifier</button>
+                                                 <button type="button" class="btn btn-danger mr-1" [routerLink]="'/core/list'" (click)="deleteContent(p._id)"> Supprimer</button>
+                                        </td>
+
+                                        <!-- <td><button type="button" class="btn btn-danger">Supprimer</button> -->
+
+
+
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-5">
+                            <div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite"></div>
+                        </div>
+                        <div class="col-sm-12 col-md-7">
+                            <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Liste Qr-Codes de Menu</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+
+
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <table class="table table-bordered dataTable" id="dataTable" width="100%"
+                                    cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+                                    <thead>
+                                        <tr role="row">
+                                            <th class="sorting sorting_asc" tabindex="0" aria-controls="dataTable"
+                                                rowspan="1" colspan="1" aria-sort="ascending"
+                                                aria-label="Name: activate to sort column descending"
+                                                style="width: 57px;">
+                                                Nom Qr</th>
+
+                                            <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
+                                                colspan="1" aria-label="Position: activate to sort column ascending"
+                                                style="width: 61px;">Accéder au lien</th>
+                                                <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
+                                                colspan="1" aria-label="Position: activate to sort column ascending"
+                                                style="width: 61px;">Paramètres</th>
+
+
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+
+                                    </tfoot>
+                                    <tbody>
+                                        <!--  *ngFor ="let p of listparent ;let index=index" -->
+                                        <tr *ngFor="let p of  mymenu ;let index=index ">
+
+                                            <td>{{p.nomQr}}</td>
+                                            <td>
+                                                <!-- <input [(ngModel)]="p._id" let i="p._id"> -->
+
+                                                <button type="button" class="btn btn-primary" (click)="affiche2(p._id)">
+                                                    <i class="fa fa-link fa-1x text-gray-300  "></i>&nbsp;Lien</button>
+                                            </td>
+                                            <td>
+                                                <!-- <input [(ngModel)]="p._id" let i="p._id"> -->
+                
+                                             <button type="button" class="btn btn-warning mr-1" [routerLink]="'/core/menu/update/'+p._id"> Modifier</button>
+                                           
+                                                <!-- <input [(ngModel)]="p._id" let i="p._id"> -->
+                
+                                             <button type="button" class="btn btn-danger mr-1" (click)="deleteMenu(p._id)"> Supprimer</button>
+                                            </td>
+
+                                            <!-- <td><button type="button" class="btn btn-danger">Supprimer</button> -->
+
+
+
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-5">
+                                <div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite"></div>
+                            </div>
+                            <div class="col-sm-12 col-md-7">
+                                <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

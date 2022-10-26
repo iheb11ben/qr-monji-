@@ -1,0 +1,90 @@
+
+
+
+
+
+
+<div class="container">
+    <!-- Page Heading -->
+    <div class="row">
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        
+
+
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Carte visite</h6>
+            </div>
+            <div class="product-form">
+
+                <div class="form-group" *ngFor="let val of Qr.nom ;let i = index">
+                    <label>Nom </label>
+                    <input type="text"  [(ngModel)]="val.value"   class="form-control" />
+                    <div class="invalid-feedback">
+                        <div>Name is required</div>
+                    </div>
+
+
+                </div>
+                <div class="top-row" *ngFor="let val of Qr.email ;let i = index">
+                    <label>Email</label>
+                    <input type="email"      [(ngModel)]="val.value"   class="form-control" />
+                 
+                    <button class="btn btn-danger mr-1 " (click)="remove(i,'email')">Supprimer</button>
+                    <div class="invalid-feedback">
+                        <div>Description is required</div>
+                    </div>
+                    <button  type="submit" class="btn btn-primary" (click)="addphone('email')">Ajouter email</button>
+                </div>
+                <div class="top-row" *ngFor="let val of Qr.phone ;let i = index">
+                    <label>Numéro de Téléphone</label>
+                    <input  type="number"  [(ngModel)]="val.value"   class="form-control" />
+                    <button class="btn btn-danger mr-1 " (click)="remove(i,'phone')">Supprimer</button>
+
+                    <div class="invalid-feedback">
+                        <div>Téléphone is required</div>
+                    </div>
+                    <button  type="submit" class="btn btn-primary" (click)="addphone('phone')">Ajouter phone</button>
+                </div>
+                <div class="top-row" *ngFor="let val of Qr.ville; let i =index">
+                    <label>Activité</label>
+                    <input  type="text" class="form-control"  [(ngModel)]="val.value"   />
+                    <button class="btn btn-danger mr-1" (click)="remove(i,'activite')">Supprimer</button>
+                    <div class="invalid-feedback">
+                        <div>Téléphone is required</div>
+                    </div>
+                    <button  type="submit" class="btn btn-primary" id="btn" (click)="addphone('activite')">Ajouter activite</button>
+                </div>
+
+                <div class="top-row" *ngFor="let val of Qr.adresse ; let i=index">
+                    <label>Adresse</label>
+                    <input  type="text" class="form-control"  [(ngModel)]="val.value"   />
+                    <button class="btn btn-danger mr-1" (click)="remove(i,'adresse')">Supprimer</button>
+                    <div class="invalid-feedback">
+                        <div>Téléphone is required</div>
+                    </div>
+                    <button  type="button" class="btn btn-primary" id="btn" (click)="addphone('adresse')">Ajouter Adresse</button>
+                </div>
+
+                <div class="form-group">
+                    <!-- <button type="submit" class="btn btn-primary" >Ajouter</button> -->
+                    <button type="submit" class="btn btn-warning float-right"  (click)="submit()"  >
+                        Valider
+                    </button>
+                  
+                </div>
+            </div>
+        </div>
+
+   
+
+</div>
+</div>
+
+
+<div class="card-header" id="nom">
+    <h3>Nom de Qr code</h3>
+    <input type="text" class="form-control" [(ngModel)]="Qr.nomQr"   class="form-control" />
+</div>
+

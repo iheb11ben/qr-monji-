@@ -1,0 +1,57 @@
+<div class="container">
+
+    <!-- Page Heading -->
+    <div class="row">
+      <!-- DataTales Example -->
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Menu</h6>
+        </div>
+        <div class="product-form">
+          <div class="form-group">
+            <label>Nom QR-Code</label>
+            <input type="text" [(ngModel)]="qrcode.nomQr" class="form-control" />
+            <div class="invalid-feedback">
+              <div>Name is required</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Nom </label>
+            <input type="text" [(ngModel)]="qrcode.name" class="form-control" />
+            <div class="invalid-feedback">
+              <div>Name is required</div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="top-row">
+        <div class="field-wrap" id="plat">
+          <th><button class="btn btn-warning"(click)="ajouterPlat(nomPlat,prixPlat)">Ajouter Plat</button></th>
+       
+          <div></div>
+  
+          <th><label>Plat</label></th>
+          <div></div>
+          <th scope="col">Nom du Plat</th>
+          <th scope="col">Prix du Plat</th>
+  
+          <tr *ngFor="let el of qrcode.plat; let i = index">
+            <td>
+              <input type="text" class="form-control" [(ngModel)]="el.nomPlat" />
+            </td>
+            <td>
+              <input type="text" class="form-control" [(ngModel)]="el.prixPlat" />
+            </td>
+            <td><button class="btn btn-danger"(click)="deletePlat(i)">Supprimer</button></td>
+         
+          </tr>
+        </div>
+      </div>
+    </div>
+    <div>
+        <th><button class="btn btn-primary"(click)="alertWithSuccess()" (click)="update()">Enregistrer les Modifications</button></th>
+        <th><button class="btn btn-warning"[routerLink]="'/core/list'">Retour</button></th>
+    </div>
+  </div>
+  
