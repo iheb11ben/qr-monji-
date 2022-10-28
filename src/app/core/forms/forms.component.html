@@ -18,7 +18,8 @@
                         <div>Name is required</div>
                     </div>
                 </div>
-                <button (click)="addInput('nom')">add</button>
+                <a  (click)="addInput('nom')"> <img style="width:1.5em; height:1.5em;" src="assets/img/plus.png" alt="">&nbsp;</a>
+              
                 <div class="form-group" *ngFor="let el of Qr.email" >
                     <label>Email</label>
                     <input type="text" class="form-control" [(ngModel)]="el.value"  />
@@ -26,7 +27,8 @@
                         <div>Description is required</div>
                     </div>
                 </div>
-                <button (click)="addInput('email')">add</button>
+                <a  (click)="addInput('email')"> <img style="width:1.5em; height:1.5em;" src="assets/img/plus.png" alt="">&nbsp;</a>
+                
 
                 <div class="form-group" *ngFor="let el of Qr.phone" >
                     <label>Numéro de Téléphone</label>
@@ -35,14 +37,17 @@
                         <div>Téléphone is required</div>
                     </div>
                 </div>
-                <button (click)="addInput('phone')">add</button>
+                <a  (click)="addInput('phone')"> <img style="width:1.5em; height:1.5em;" src="assets/img/plus.png" alt="">&nbsp;</a>
+                
               
-              <button class="btn btn-primary" (click)="addphone('normale')">ajouter</button>
+             
                 <div class="form-group" *ngFor="let el of Qr.choix">
-                    
+                    <label>Ajouter un nouveau champ</label>
                     <input  type="text" class="form-control" [(ngModel)]="el.key" />
+                    <label>Description</label>
                     <input  type="text" class="form-control" [(ngModel)]="el.value" />
-                    
+                   
+                    <a  (click)="addphone('normale')"> <img style="width:1.5em; height:1.5em;" src="assets/img/plus.png" alt="">&nbsp;</a>
                 </div>
                 <!-- <button class="btn btn-primary" (click)="addphone('speciale')">add</button>
                 <div class="form-group" *ngFor="let el of Qr.choix">
@@ -54,16 +59,16 @@
                     <option value="1" [selected]="false"  >Invitaion mariage</option>
                     <option value="3"  [selected]="false">Facture</option>
                     <option value="4" [selected]="false">Autres</option>
-                  </select>
+                  </select><br>
 
 
 
-              
-                <button type="button" class="btn btn-warning float-right" (click)="submit()">
-                    valider
-                </button>
-            </div>
-        </div>
+                  <a class="float-right" (click)="submit()" > <img style="width:2.5em; height:2.5em;" src="assets/img/check.png" alt="">&nbsp;</a>
+                
+                    
+               
+            </div><br>
+        </div><br>
     </div>
     
 </div>
