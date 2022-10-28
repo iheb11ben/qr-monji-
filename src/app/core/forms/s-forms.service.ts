@@ -7,14 +7,14 @@ import { FormsModel } from './forms-model';
   providedIn: 'root'
 })
 export class SFormsService {
-baseurl='http://192.168.100.11:3000/content'
+baseurl='http://192.168.100.11:3000/libre'
 constructor(private httpclient: HttpClient) { }
 
 createQrCode(data:FormsModel):Observable<any>{
 return this.httpclient.post<any>(this.baseurl+'/',data)
 }
 getQrCode(id:string):Observable<any>{
-return this.httpclient.get<FormsModel>(this.baseurl+'/affiche/'+id)
+  return this.httpclient.get<FormsModel>(this.baseurl+'/'+id)
 }
 getQrCodebyIduser(id:string):Observable<any[]>{
 return this.httpclient.get<FormsModel[]>(this.baseurl+'/afficheUser/'+id)

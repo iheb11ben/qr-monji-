@@ -9,14 +9,14 @@ import { SFormsService } from './s-forms.service';
   styleUrls: ['./forms.component.scss']
 })
 export class FormsComponent implements OnInit {
-  qrcode:FormsModel={nomQr:'',  nom:[{value:""}],phone:[{value:0}],prenom:[{value:""}],adresse:[{value:""}],email:[{value:""}],ville:[{value:""}],user:''};
-Qr:FormsModel={nomQr:'',  nom:[{value:""}],phone:[{value:0}],prenom:[{value:""}],adresse:[{value:""}],email:[{value:""}],ville:[{value:""}],user:''};
-Qr2:FormsModel={nomQr:'',nom:[{value:""}],phone:[{value:0}],prenom:[{value:""}],adresse:[{value:""}],email:[{value:""}],ville:[{value:""}],user:''};
+  qrcode:FormsModel={nomQr:'',  nom:[{value:""}],phone:[{value:0}],prenom:[{value:""}],adresse:[{value:""}],email:[{value:""}],ville:[{value:""}],choix:[{}],user:''};
+Qr:FormsModel={choix:[{key:"",value:"",value1:""}],nomQr:'',  nom:[{value:""}],phone:[{value:0}],prenom:[{value:""}],adresse:[{value:""}],email:[{value:""}],ville:[{value:""}],user:''};
+Qr2:FormsModel={choix:[{key:"",value:""}],nomQr:'',nom:[{value:""}],phone:[{value:0}],prenom:[{value:""}],adresse:[{value:""}],email:[{value:""}],ville:[{value:""}],user:''};
 // phones:number[]=[0,0];
 phones:{value:number}[]=[]
 phone!:number;
-// ligne!:string
-// public myAngularxQrCode!: string ;
+opt!:String;
+
 
   constructor(private formsServ:SFormsService,private activate:ActivatedRoute,private router:Router) { 
     // this.myAngularxQrCode = '';
@@ -28,14 +28,16 @@ this.Qr.user=localStorage.getItem('idUser')+''
 console.log('iduser',this.Qr.user);
 
   }
+  
   submit(){
     this.formsServ.createQrCode(this.Qr).subscribe(data=>{
-      console.log(data);
-      localStorage.setItem('id',data._id)
-      localStorage.setItem('idqr',data._id)
-      console.log('/core/carte/affiche/'+data._id);
+      console.log("forms data ",data);
+      console.log("forms ",data._id);
+      localStorage.setItem('idform',data._id)
+      // localStorage.setItem('idqr',data._id)
+      console.log('/core/form/affiche/'+data._id);
       
-      this.router.navigate(['/core/carte/affiche/'+data._id])
+      this.router.navigate(['/core/form/affiche/'+data._id])
     });
     
 }
@@ -43,22 +45,46 @@ console.log('iduser',this.Qr.user);
   // affiche(){
   //  return this.contentServ.getQrCode().subscribe(data=>this.qrcode=data)
   // }
-  addphone(ligne:any){
+  addphone(type:String){
+    if(type==="normale"){
+      this.Qr.choix.push({key:"",value:""});
+      // if(type==="speciale"){
+      //   this.Qr.choix.concat({value1:""})
+    
+      // }
+    }
+    
+ 
+ console.log(this.Qr.choix);
+
+    
+  }
+  addType(){
+   
+    
+   localStorage.setItem("type",this.opt+'')
+ 
+
+    
+  }
+  addInput(ligne:any){
     console.log(ligne);
     
   if(ligne === "phone"){
-    this.phones.push({value:0})
-    this.Qr.phone=this.phones}
+    this.Qr.phone.push({value:0})
+    }
     else if (ligne === "email"){
       
       this.Qr.email.push({value:''})
       console.log(this.Qr.email);
-    }else if (ligne === "adresse"){
+    }
+    else if (ligne === "nom"){
       
-      this.Qr.adresse.push({value:''})
-      console.log(this.Qr.adresse);
+      this.Qr.nom.push({value:''})
+      console.log(this.Qr.nom);
     }
   }
+ 
   remove(i:number,name:string){
     if(name === 'phone'){
     this.Qr.phone.splice(i,1);

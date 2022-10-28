@@ -4,46 +4,52 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul style="background: linear-gradient(
+            to bottom,
+           white
+            #dce5e7,
+           
+            
+          );" class="navbar-nav  sidebar sidebardark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a routerLink="/core" class="sidebar-brand d-flex align-items-center justify-content-center">
+            <a routerLink="/core" class="sidebar-brand d-flex text-primary align-items-center justify-content-center">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa fa-qrcode"></i>
+                    <img style="width:1.5em; height:1.5em;" src="assets/img/qr-code.png" alt="">&nbsp;
                 </div>
-                <div class="sidebar-brand-text mx-3">MY-QR </div>
+                <div class="text mx-3 text-primary">EASY-QR</div>
             </a>
 
             <!-- Divider -->
-            <hr class="sidebar-divider my-0">
+            <!-- <hr class="sidebar-divider my-0"> -->
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
+            <li class="nav-item active" style=" margin-top: 25%;">
                 <a class="nav-link" routerLink="/core">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <img style="width:2em; height:2em;" src="assets/img/menu.png" alt="">&nbsp;
                     <span>Menu</span></a>
             </li>
 
             <!-- Divider -->
-            <hr class="sidebar-divider">
+            <!-- <hr class="sidebar-divider"> -->
 
             <!-- Heading -->
-            <div class="sidebar-heading">
+            <div class="sidebar-heading" style="margin-top: 25%;text-align: center;">
                 Services
             </div>
-
+<img src="" alt="">
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                <a class="nav-link collapsed"  data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
+                    <img style="width:1.5em; height:1.5em;" src="assets/img/reglage.png" alt="">&nbsp;
                     <span>Compte</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header"></h6>
-                        <a class="collapse-item" routerLink="/core/parametre">Modification</a>
-                        <a class="collapse-item" routerLink="/core/detail"> Information </a>
+                        <a class="collapse-item" routerLink="/core/parametre"> <img style="width:1.5em; height:1.5em;" src="assets/img/edit.png" alt="">&nbsp;&nbsp;Modification</a>
+                        <a class="collapse-item" routerLink="/core/detail">  <img style="width:1.5em; height:1.5em;" src="assets/img/profile.png" alt="">&nbsp;&nbsp;Information </a>
                     </div>
                 </div>
             </li>
@@ -52,28 +58,28 @@
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                <a class="nav-link collapsed"  href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
+                    <img style="width:2em; height:2em;" src="assets/img/services.png" alt="">&nbsp;
                     <span>Services</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header"></h6>
-                        <a class="collapse-item" routerLink="/core/url">URL</a>
-                        <a class="collapse-item" routerLink="/core/carte">Carte visite</a>
-                        <a class="collapse-item" routerLink="/core/form">Formulaire Simple</a>
-                        <a class="collapse-item" routerLink="/core/menu">Menu</a>
+                        <a class="collapse-item" routerLink="/core/url"><img style="width:1.5em; height:1.5em;" src="assets/img/link.png" alt="">&nbsp;URL</a>
+                        <a class="collapse-item" routerLink="/core/carte"><img style="width:2em; height:2em;" src="assets/img/card.png" alt="">&nbsp;Carte visite</a>
+                        <a class="collapse-item" routerLink="/core/form"><img style="width:1.5em; height:1.5em;" src="assets/img/form.png" alt="">&nbsp;Formulaire Simple</a>
+                        <a class="collapse-item" routerLink="/core/menu"><img style="width:1.5em; height:1.5em;" src="assets/img/menu2.png" alt="">&nbsp;Menu</a>
                     </div>
                 </div>
             </li>
 
             <!-- Divider -->
-            <hr class="sidebar-divider">
+            <!-- <hr class="sidebar-divider"> -->
 
             <!-- Heading -->
-            <div class="sidebar-heading">
+            <div class="sidebar-heading" style="margin-top: 25%;text-align: center;">
                 Liste
             </div>
 
@@ -86,12 +92,13 @@
             <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <a class="nav-link" routerLink="/core/list">
-                    <i class="fas fa-fw fa-table"></i>
+                    <img style="width:2em; height:2em;" src="assets/img/list.png" alt="">&nbsp;
                     <span>Mes Qr-Codes</span></a>
             </li>
 
             <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
+            <!-- <hr class="sidebar-divider d-none d-md-block"> -->
+             
         </ul>
 
         <!-- End of Sidebar -->
@@ -103,7 +110,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <nav  class="navbar navbar-expand  topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -158,8 +165,8 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Compte</span>
-                                <img class="img-profile rounded-circle" src="assets/img/undraw_profile.svg">
+                                <span class="mr1 d-none d-lg-inline text-gray-600 small">Compte</span>
+                                <img style="margin-left: 1.5rem;" class="img-profile rounded-circle" src="assets/img/utilisateur.png">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -202,7 +209,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; QR-CODE 2022</span>
+                        <span>Copyright &copy; EASY-QR 2022</span>
                     </div>
                 </div>
             </footer>

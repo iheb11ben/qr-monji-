@@ -1,8 +1,7 @@
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <body>
-  <div>
+  <div *ngIf="valeur == 1">
 <h2 style="text-align:center">User Profile Card</h2>
 
 <div class="card">
@@ -38,10 +37,50 @@
     <a href="#"><i class="fa fa-facebook"></i></a> 
  </div>
  <p><button>Contact</button></p>
+</div>
+  </div>
+</body>
 
 
-
-
-
-
-
+ <!-- model 1 -->
+ <div *ngIf="valeur == 2">
+<div class="card_1 front">
+  <div class="blue"></div>
+  <div class="yellow"></div>
+  <div class="pink"></div>
+  <div class="dots"></div>
+  <div class="personal-intro">
+    <div *ngFor="let el of qrcode.nom ">
+    <p>{{el.value}}</p>
+  </div>
+  <div *ngFor="let el of qrcode.ville ">
+    <p>{{el.value}}</p>
+  </div>
+  </div>
+</div>
+<div class="card_1 back">
+  <div class="yellow"></div>
+  <div class="top dots"></div>
+  <div class="personal-info" >
+    <div  *ngFor="let el of qrcode.nom ">
+      <p>{{el.value}}</p>
+    </div>
+    <div *ngFor="let el of qrcode.ville ">
+      <p>{{el.value}}</p>
+    </div>
+      <div class="p1">
+      <div *ngFor="let el of qrcode.adresse ">
+        <p>{{el.value}}</p>
+      </div>
+        <div *ngFor="let el of qrcode.phone ">
+          <p>{{el.value}}</p>
+        </div>
+          <div *ngFor="let el of qrcode.email ">
+            <p>{{el.value}}</p>
+          </div>
+  </div>
+  <div class="bottom dots"></div>
+  <div class="pink"></div>
+  <button routerLink="">valider</button>
+</div>
+</div>

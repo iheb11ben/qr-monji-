@@ -9,13 +9,13 @@ import { Catremodel } from '../catremodel';
   styleUrls: ['./affiche2.component.scss']
 })
 export class Affiche2Component implements OnInit {
-
+  valeur!:number
   qrcode :Catremodel={nom:[''],phone:[0],prenom:[''],adresse:[''],email:[''],ville:[''],nomQr:'',user:''};
  id!:string
     constructor(private contentServ:CartevisiteService, private activeRoute:ActivatedRoute) { }
   
     ngOnInit(): void {
-      
+      this.valeur=this.activeRoute.snapshot.params['model']
       // this.id=localStorage.getItem('idqr')+''
       this.id=this.activeRoute.snapshot.params['id']
       this.affiche(this.id);

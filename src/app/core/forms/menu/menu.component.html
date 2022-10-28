@@ -28,17 +28,10 @@
               [(ngModel)]="el.nomPlat"
             />
             <input type="text" class="form-control" [(ngModel)]="el.prixPlat" />
-            <button
-              type="submit"
-              class="btn btn-primary"
-              (click)="addPlat(el.nomPlat,el.prixPlat)"
-            >
-              Ajouter Plat
-            </button>
+           
+            <a   (click)="addPlat(el.nomPlat,el.prixPlat)"> <img style="width:1.5em; height:1.5em;" src="assets/img/plus.png" alt="">&nbsp;</a>
 
-            <button class="btn btn-danger mr-1" (click)="removePlat(i)">
-              Supprimer
-            </button>
+            <a  (click)="removePlat(i)"> <img style="width:1.5em; height:1.5em;" src="assets/img/remove.png" alt="">&nbsp;</a>
             <div class="invalid-feedback">
               <div>Plat is required</div>
             </div>
@@ -46,15 +39,9 @@
         </div>
         <div class="form-group">
           <!-- <button type="submit" class="btn btn-primary" >Ajouter</button> -->
-          <button
-            type="button"
-            class="btn btn-warning float-right"
-            (click)="submit()"
-          >
-            valider
-          </button>
+          <a class="float-right" (click)="submit()" > <img style="width:2.5em; height:2.5em;" src="assets/img/check.png" alt="">&nbsp;</a>
         </div>
-      </div>
+      </div><br>
     </div>
   </div>
 

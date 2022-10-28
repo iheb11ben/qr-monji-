@@ -12,9 +12,7 @@ const { ModuleResolutionKind } = require('typescript')
 
 const createFormLibreController = async(req,res)=>{
     const FormLibre = await creatFormLibreService({...req.body})
-    res.status(StatusCodes.CREATED).send({
-        msg: 'FormLibre Created',
-    })
+    res.status(StatusCodes.CREATED).send(FormLibre)
 }
 const getFormLibreController=async(req,res)=>{
     const FormLibres = await getFormLibresService()

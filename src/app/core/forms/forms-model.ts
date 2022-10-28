@@ -7,5 +7,6 @@ export interface FormsModel {
     email:any[],
     adresse:any[], 
     ville:any[],
-    user:String
+    user:String,
+    choix:any[],
 }

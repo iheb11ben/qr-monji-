@@ -21,59 +21,55 @@
                 <div class="form-group" *ngFor="let val of Qr.nom ;let i = index">
                     <label>Nom </label>
                     <input type="text"  [(ngModel)]="val.value"   class="form-control" />
-                    <div class="invalid-feedback">
-                        <div>Name is required</div>
-                    </div>
-
-
                 </div>
                 <div class="top-row" *ngFor="let val of Qr.email ;let i = index">
                     <label>Email</label>
                     <input type="email"      [(ngModel)]="val.value"   class="form-control" />
-                 
-                    <button class="btn btn-danger mr-1 " (click)="remove(i,'email')">Supprimer</button>
-                    <div class="invalid-feedback">
-                        <div>Description is required</div>
-                    </div>
-                    <button  type="submit" class="btn btn-primary" (click)="addphone('email')">Ajouter email</button>
-                </div>
+                    <a  (click)="remove(i,'email')"> <img style="width:1.5em; height:1.5em;" src="assets/img/remove.png" alt="">&nbsp;</a>
+    
+                    <a  (click)="addphone('email')"> <img style="width:1.5em; height:1.5em;" src="assets/img/plus.png" alt="">&nbsp;</a>
+                    
+                </div><br>
                 <div class="top-row" *ngFor="let val of Qr.phone ;let i = index">
                     <label>Numéro de Téléphone</label>
                     <input  type="number"  [(ngModel)]="val.value"   class="form-control" />
-                    <button class="btn btn-danger mr-1 " (click)="remove(i,'phone')">Supprimer</button>
+                    <a  (click)="remove(i,'phone')"> <img style="width:1.5em; height:1.5em;" src="assets/img/remove.png" alt="">&nbsp;</a>
+
 
                     <div class="invalid-feedback">
                         <div>Téléphone is required</div>
                     </div>
-                    <button  type="submit" class="btn btn-primary" (click)="addphone('phone')">Ajouter phone</button>
-                </div>
+                    <a  (click)="addphone('phone')"> <img style="width:1.5em; height:1.5em;" src="assets/img/plus.png" alt="">&nbsp;</a><br>
+                   
+                </div><br>
                 <div class="top-row" *ngFor="let val of Qr.ville; let i =index">
                     <label>Activité</label>
                     <input  type="text" class="form-control"  [(ngModel)]="val.value"   />
-                    <button class="btn btn-danger mr-1" (click)="remove(i,'activite')">Supprimer</button>
+                    <a  (click)="remove(i,'activite')"> <img style="width:1.5em; height:1.5em;" src="assets/img/remove.png" alt="">&nbsp;</a>
+                   
                     <div class="invalid-feedback">
                         <div>Téléphone is required</div>
                     </div>
-                    <button  type="submit" class="btn btn-primary" id="btn" (click)="addphone('activite')">Ajouter activite</button>
-                </div>
+                    <a  (click)="addphone('activite')"> <img style="width:1.5em; height:1.5em;" src="assets/img/plus.png" alt="">&nbsp;</a><br>
+                   
+                </div><br>
 
                 <div class="top-row" *ngFor="let val of Qr.adresse ; let i=index">
                     <label>Adresse</label>
                     <input  type="text" class="form-control"  [(ngModel)]="val.value"   />
-                    <button class="btn btn-danger mr-1" (click)="remove(i,'adresse')">Supprimer</button>
+                    <a  (click)="remove(i,'adresse')"> <img style="width:1.5em; height:1.5em;" src="assets/img/remove.png" alt="">&nbsp;</a>
+        
                     <div class="invalid-feedback">
                         <div>Téléphone is required</div>
                     </div>
-                    <button  type="button" class="btn btn-primary" id="btn" (click)="addphone('adresse')">Ajouter Adresse</button>
+                    <a  (click)="addphone('adresse')"> <img style="width:1.5em; height:1.5em;" src="assets/img/plus.png" alt="">&nbsp;</a>
+                   
                 </div>
 
                 <div class="form-group">
                     <!-- <button type="submit" class="btn btn-primary" >Ajouter</button> -->
-                    <button type="submit" class="btn btn-warning float-right"  (click)="submit()"  >
-                        Valider
-                    </button>
-                  
-                </div>
+                    <a class="float-right" (click)="submit()" > <img style="width:2.5em; height:2.5em;" src="assets/img/check.png" alt="">&nbsp;</a>
+                </div><br><br>
             </div>
         </div>
 

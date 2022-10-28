@@ -10,7 +10,7 @@ import { FormsModel } from '../forms-model';
 })
 export class FormLibre2Component implements OnInit {
 
-  qrcode :FormsModel={nom:[''],phone:[0],prenom:[''],adresse:[''],email:[''],ville:[''],nomQr:'',user:''};
+  qrcode :FormsModel={choix:[{key:"",value:""}],nom:[''],phone:[0],prenom:[''],adresse:[''],email:[''],ville:[''],nomQr:'',user:''};
  id!:string
     constructor(private formsServ:SFormsService, private activeRoute:ActivatedRoute) { }
   

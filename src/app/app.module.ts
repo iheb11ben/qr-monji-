@@ -13,10 +13,17 @@ import { HeaderComponent } from './core/structure/header/header.component';
 import { FooterComponent } from './core/structure/footer/footer.component';
 import { FormsComponent } from './core/forms/forms.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { RecherchePipe } from './recherche.pipe';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateModule } from '@ngx-translate/core';
+
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -38,8 +45,14 @@ import { RecherchePipe } from './recherche.pipe';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgxQRCodeModule
-
+    NgxQRCodeModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateHttpLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

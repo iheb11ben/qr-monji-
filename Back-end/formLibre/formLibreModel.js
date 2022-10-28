@@ -3,8 +3,8 @@ const FormLibreSchema=new mongoose.Schema(
     {
 
         nomQr:{type:String},
-        name:{
-            type:String,
+        nom:{
+            type:Array,
             required:true,
         },
         email:{
@@ -15,10 +15,12 @@ const FormLibreSchema=new mongoose.Schema(
             type:Array,
             required:true,
         },
+
         activite:{
             type:Array,
             required:true,
         },
+        choix:{type:Array},
         adresse:{type:Array},
         ville:{type:Array},
         user:{type:mongoose.Types.ObjectId,

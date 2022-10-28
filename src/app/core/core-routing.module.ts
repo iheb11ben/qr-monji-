@@ -8,6 +8,7 @@ import { AfficheComponent } from './forms/cartevisite/affiche/affiche.component'
 import { Affiche2Component } from './forms/cartevisite/affiche2/affiche2.component';
 import { CartevisiteComponent } from './forms/cartevisite/cartevisite.component';
 import { UpdatecarteComponent } from './forms/cartevisite/updatecarte/updatecarte.component';
+import { FormLibreComponent } from './forms/form-libre/form-libre.component';
 import { FormsComponent } from './forms/forms.component';
 import { AfficheMenuComponent } from './forms/menu/affiche-menu/affiche-menu.component';
 import { MenuComponent } from './forms/menu/menu.component';
@@ -21,7 +22,7 @@ const routes: Routes = [
   {path:'carte/affichefinal/:id',component:Affiche2Component},
   {path:'menu/affiche/:id',component:AfficheMenuComponent},
 
-  
+  {path:'fomr/affichefinal/:id/:model',component:Affiche2Component},
   {path:'',component:HomeComponent,children:[
     {path:'',component:FamilleComponent},
     {path:'form',component:FormsComponent},
@@ -36,8 +37,8 @@ const routes: Routes = [
   {path:'url/affiche/:id',component:UpdateUrlComponent},
   {path:'detail',component:DetailComponent},
 
-  {path:'update/:id',component:UpdatecarteComponent}
-    
+  {path:'update/:id',component:UpdatecarteComponent},
+  {path:'form/affiche/:id',component:FormLibreComponent},  
 
 
 ],canActivate: [AuthGuardGuard]}
